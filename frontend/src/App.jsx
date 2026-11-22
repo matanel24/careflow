@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import AiAssistant from './components/AiAssistant'
 
 function App() {
   const [healthStatus, setHealthStatus] = useState('בודק חיבור לשרת...')
@@ -128,12 +129,7 @@ function App() {
           </div>
         )}
 
-        {activeSection === 'ai-assistant' && (
-          <div>
-            <h2>שאל את העוזר</h2>
-            <p>ממשק שאלות לעוזר המרפאה (POST /ai-requests) — יחובר על ידי מתנאל.</p>
-          </div>
-        )}
+        {activeSection === 'ai-assistant' && <AiAssistant />}
       </main>
     </div>
   )
