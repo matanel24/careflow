@@ -2,6 +2,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from routers import patients
 
+from routers import ai_requests
+
 app = FastAPI(title="CareFlow API")
 
 app.add_middleware(
@@ -18,3 +20,6 @@ app.include_router(patients.router)
 @app.get("/health")
 def health_check():
     return {"status": "ok"}
+
+
+app.include_router(ai_requests.router)
