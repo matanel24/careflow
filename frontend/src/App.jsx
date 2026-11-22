@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-
+import Appointments from "./components/Appointments";
 function App() {
   const [healthStatus, setHealthStatus] = useState('בודק חיבור לשרת...')
   const [activeSection, setActiveSection] = useState('appointments')
@@ -108,10 +108,7 @@ function App() {
         }}
       >
         {activeSection === 'appointments' && (
-          <div>
-            <h2>הצג תורים</h2>
-            <p>אזור תצוגת תורים (GET /appointments) — יחובר על ידי אורי.</p>
-          </div>
+          <Appointments />
         )}
 
         {activeSection === 'medications' && (
