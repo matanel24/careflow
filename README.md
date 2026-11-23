@@ -70,6 +70,7 @@ After changing `requirements.txt` or `package.json`, rebuild: `docker compose up
 | POST | `/ai-requests` | Save a question for the clinic AI assistant | Matanel |
 | GET | `/ai-requests` | Latest saved questions | Matanel |
 | GET | `/appointments` | List appointments sorted by appointment_time | Ori |
+| GET | `/medications` | List medication inventory sorted by name (low stock shown in red) | Evyatar |
 ## Adding a new endpoint
 1. Create `backend/routers/<feature>.py` with an `APIRouter`.
 2. Use `get_supabase()` from `db.py` to read/write the database.
