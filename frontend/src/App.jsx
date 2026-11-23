@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Appointments from "./components/Appointments";
 import AiAssistant from './components/AiAssistant'
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
   const [feedback, setFeedback] = useState(null)
 
   const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000'
-
+  
   useEffect(() => {
     fetch(`${apiUrl}/health`)
       .then((res) => {
@@ -160,10 +161,7 @@ function App() {
         }}
       >
         {activeSection === 'appointments' && (
-          <div>
-            <h2>הצג תורים</h2>
-            <p>אזור תצוגת תורים (GET /appointments) — יחובר על ידי אורי.</p>
-          </div>
+          <Appointments />
         )}
 
         {activeSection === 'medications' && (
