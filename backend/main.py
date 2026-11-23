@@ -4,6 +4,7 @@ from routers import appointments
 from routers import patients
 
 from routers import ai_requests
+from routers import medications
 
 app = FastAPI(title="CareFlow API")
 app.include_router(appointments.router)
@@ -24,3 +25,4 @@ def health_check():
 
 
 app.include_router(ai_requests.router)
+app.include_router(medications.router)

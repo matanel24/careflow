@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Appointments from "./components/Appointments";
 import AiAssistant from './components/AiAssistant'
+import Medications from './components/Medications'
 
 function App() {
   const [healthStatus, setHealthStatus] = useState('בודק חיבור לשרת...')
@@ -164,12 +165,7 @@ function App() {
           <Appointments />
         )}
 
-        {activeSection === 'medications' && (
-          <div>
-            <h2>מלאי תרופות</h2>
-            <p>אזור מלאי תרופות (GET /medications) — יחובר על ידי אביתר.</p>
-          </div>
-        )}
+        {activeSection === 'medications' && <Medications />}
 
         {activeSection === 'add-patient' && (
           <div style={{ maxWidth: '480px' }}>
